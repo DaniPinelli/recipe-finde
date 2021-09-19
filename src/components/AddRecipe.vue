@@ -36,7 +36,7 @@
     </div>
 </template>
 <script>
-//mport { uuid } from 'uuid';
+//import {uuid} from 'uuid';
 
 export default {
     name: 'AddRecipe',
@@ -53,7 +53,7 @@ export default {
           e.preventDefault();
 
           const newRecipe = {
-              id:20, //uuid(),
+              id: 20,//uuid(),
               title: this.title,
               ingredients: this.ingredients,
               type:this.type ,

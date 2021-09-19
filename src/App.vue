@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div id="header" ></div>
+    <div id="header" > <finder v-on:query-change="querySearch" /> 
+    </div>
     <div id="main-container" >
       <h1 class="text-center" >Add Recipe</h1>
       <AddRecipe v-on:add-recipe="addRecipe"/>
@@ -13,17 +14,30 @@
 <script>
 import Recipes from './components/Recipes.vue'
 import AddRecipe from './components/AddRecipe.vue'
+import Finder from './components/Finder.vue'
+
 
 export default {
   name: 'App',
   components: {
-   AddRecipe, Recipes
+   Finder, AddRecipe, Recipes
   }, 
 
   methods:{
   addRecipe(recipe){
     this.recipes.push(recipe);
     this.copyRecipes = [...this.recipes]
+  },
+  querySearch(query){
+    if(query.trim() === ''){
+      this.copyRecipes = "";
+    } else {
+      const temp = this.copyRecipes.filter(recipe => {
+        return recipe.title.includes(query)
+      });
+
+      this.copyRecipes = [...temp]; 
+    }
   }
   },
   data () {
