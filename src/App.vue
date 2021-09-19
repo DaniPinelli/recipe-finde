@@ -1,26 +1,62 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div id="header" ></div>
+    <div id="main-container" >
+      <h2>Recipes</h2>
+      <Recipes v-bind:recipesList="copyRecipes"/>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Recipes from './components/Recipes.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+   Recipes
+  }, 
+  data () {
+    return{
+      recipes:[
+        {
+          id:0,
+          title: "Banana's bread",
+          ingredients: ["Bananas", "milk", "sugar", "flour"],
+          type:"sweet",
+          url: ""
+        },
+        {
+          id:1,
+          title: "Banana's bread",
+          ingredients: ["Bananas", "milk", "sugar", "flour"],
+          type:"sweet",
+          url: ""
+        },
+        {
+          id:2,
+          title: "Banana's bread",
+          ingredients: ["Bananas", "milk", "sugar", "flour"],
+          type:"sweet",
+          url: ""
+        },
+        {
+          id:3,
+          title: "Banana's bread",
+          ingredients: ["Bananas", "milk", "sugar", "flour"],
+          type:"sweet",
+          url: ""
+        }
+      ],
+      copyRecipes: []
+    }
+  }, 
+  created () {
+    this.copyRecipes = [...this.recipes];
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
