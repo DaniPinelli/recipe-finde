@@ -1,5 +1,5 @@
 <template>
-<div>
+<div  class="hide">
     <div class="container-cards d-flex justify-content-center" >
       <div class="card">
          <img class="card-img-top image-recipe" :src="recipe.url" :alt="Recipe" >
@@ -28,9 +28,13 @@ border-color: #fff;
 }
 
 .image-recipe{
-    height: 160px;
-    width: auto;
-    border-radius: 5px #fff solid;
-    }
+height: 160px;
+width: auto;
+border-radius: 5px #fff solid;
+}
+
+.hide{
+  display:none;
+}
 
 </style>

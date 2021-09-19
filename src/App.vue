@@ -30,7 +30,7 @@ export default {
   },
   querySearch(query){
     if(query.trim() === ''){
-      this.copyRecipes = "";
+      this.copyRecipes = [];
     } else {
       const temp = this.copyRecipes.filter(recipe => {
         return recipe.title.includes(query)

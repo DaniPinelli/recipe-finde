@@ -28,7 +28,7 @@
             <input v-model="ingredients" type="checkbox" id="cbox9" value="Macaroni"> <label for="cbox9">Macaroni</label><br>
             <input v-model="ingredients" type="checkbox" id="cbox10" value="Eggs"> <label for="cbox10">Eggs</label>
             <input v-model="ingredients" type="checkbox" id="cbox11" value="Peas"> <label for="cbox11">Peas</label>
-            <input v-model="ingredients" type="checkbox" id="cbox12" value="Tomatoes"> <label for="cbox12">Tomatoes</label><br>
+            <input v-model="ingredients" type="checkbox" id="cbox12" value="Flour"> <label for="cbox12">Flour</label><br>
 
             <button type="submit" class="btn btn-dark">Submit</button>
             
