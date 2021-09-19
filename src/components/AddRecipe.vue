@@ -1,6 +1,6 @@
 <template>
     <div id="add-container" class="container-add d-flex justify-content-center">
-        <form>
+        <form @submit="addRecipe" >
             <label>Image</label>
             <input type="text" v-model="url" placeholder="Insert URL" ><br>
             <label>Name</label>
@@ -36,6 +36,8 @@
     </div>
 </template>
 <script>
+//mport { uuid } from 'uuid';
+
 export default {
     name: 'AddRecipe',
     data(){
@@ -44,6 +46,27 @@ export default {
           ingredients: [],
           type:"",
           url: ""
+        }
+    },
+    methods:{
+        addRecipe(e){
+          e.preventDefault();
+
+          const newRecipe = {
+              id:20, //uuid(),
+              title: this.title,
+              ingredients: this.ingredients,
+              type:this.type ,
+              url: this.url 
+          };
+
+          this.title = "";
+          this.ingredients= "";
+          this.type = "";
+          this.url = "";
+
+          this.$emit('add-recipe', newRecipe);
+
         }
     }
 }
