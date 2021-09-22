@@ -86,10 +86,10 @@ export default {
               url: this.url 
           };
 
-          this.title = "";
-          this.ingredients= "";
-          this.type = "";
-          this.url = "";
+          this.title ="";
+          this.ingredients= [];
+          this.type ="";
+          this.url ="";
 
           this.$emit('add-recipe', newRecipe);
 

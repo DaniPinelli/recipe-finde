@@ -1,11 +1,16 @@
 <template>
   <div>
-    <div id="header" > <finder v-on:query-change="querySearch" /> 
-    </div>
     <div id="main-container" >
-      <AddRecipe v-on:add-recipe="addRecipe"/>
-      <h2  class="text-center" >Recipes List</h2>
+      <div>
+        <AddRecipe v-on:add-recipe="addRecipe"/>
+      </div>
+      <div class="finder-container d-flex justify-content-center" >
+       <Finder v-on:query-change="querySearch" />
+      </div>
+      <div class="recipes-container mt-4">
+        <h2  class="text-center mt-5">Results</h2>
       <Recipes v-bind:recipesList="copyRecipes"/>
+      </div>
     </div>
   </div>
 </template>
@@ -90,5 +95,7 @@ export default {
 </script>
 
 <style>
-
+.finder-container{
+  height:290px;
+}
 </style>
