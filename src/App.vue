@@ -3,7 +3,6 @@
     <div id="header" > <finder v-on:query-change="querySearch" /> 
     </div>
     <div id="main-container" >
-      <h1 class="text-center" >Add Recipe</h1>
       <AddRecipe v-on:add-recipe="addRecipe"/>
       <h2  class="text-center" >Recipes List</h2>
       <Recipes v-bind:recipesList="copyRecipes"/>
@@ -20,7 +19,9 @@ import Finder from './components/Finder.vue'
 export default {
   name: 'App',
   components: {
-   Finder, AddRecipe, Recipes
+    AddRecipe,
+     Finder,
+     Recipes
   }, 
 
   methods:{
@@ -48,35 +49,35 @@ export default {
           title: "Banana's Bread",
           ingredients: ["Bananas", "Milk", "Sugar", "Flour"],
           type:"Sweet",
-          url: "../images/bananaBread.jpg"
+          url: "./bananaBread.jpg"
         },
         {
           id:1,
           title: "Lentil Stew",
           ingredients: ["Lentils", "Potatoes", "Salt", "Sauce"],
           type:"Salty",
-          url: "../images/lentilStew.jpg"
+          url: "./assets/lentilStew.jpg"
         },
         {
           id:2,
           title: "Mac and Cheese",
           ingredients: ["Macaroni", "Cheese", "Salt", "Milk"],
           type:"Salty",
-          url: "../images/macAndCheese.jpg"
+          url: "./macAndCheese.jpg"
         },
         {
           id:3,
           title: "Raspberry Muffins",
           ingredients: ["Raspberry", "Milk", "Sugar", "Flour"],
           type:"Sweet",
-          url: "../images/raspberryMuffins.jpg"
+          url: "raspberryMuffins.jpg"
         },
         {
           id:4,
           title: "Pea Omelette",
           ingredients: ["Peas", "Eggs", "Cheese", "Salt"],
           type:"Salty",
-          url: "../images/peaOmelette.jpg"
+          url: "/assets/peaOmelette.jpg"
         }
       ],
       copyRecipes: []
