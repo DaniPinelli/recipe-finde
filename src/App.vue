@@ -36,10 +36,10 @@ export default {
   },
   querySearch(query){
     if(query.trim() === ''){
-      this.copyRecipes = [];
+      this.copyRecipes = [...this.recipes];
     } else {
       const temp = this.copyRecipes.filter(recipe => {
-        return recipe.title.includes(query)
+        return recipe.title.toLowerCase().includes(query)
       });
 
       this.copyRecipes = [...temp]; 
@@ -54,35 +54,35 @@ export default {
           title: "Banana's Bread",
           ingredients: ["Bananas", "Milk", "Sugar", "Flour"],
           type:"Sweet",
-          url: "./bananaBread.jpg"
+          url: require('@/assets/images/bananaBread.png') 
         },
         {
           id:1,
           title: "Lentil Stew",
           ingredients: ["Lentils", "Potatoes", "Salt", "Sauce"],
           type:"Salty",
-          url: "./assets/lentilStew.jpg"
+          url: require('@/assets/images/lentilStew.jpg') 
         },
         {
           id:2,
           title: "Mac and Cheese",
           ingredients: ["Macaroni", "Cheese", "Salt", "Milk"],
           type:"Salty",
-          url: "./macAndCheese.jpg"
+          url: require('@/assets/images/macAndCheese.jpg')
         },
         {
           id:3,
           title: "Raspberry Muffins",
           ingredients: ["Raspberry", "Milk", "Sugar", "Flour"],
           type:"Sweet",
-          url: "raspberryMuffins.jpg"
+          url: require('@/assets/images/raspberryMuffins.jpg') 
         },
         {
           id:4,
           title: "Pea Omelette",
           ingredients: ["Peas", "Eggs", "Cheese", "Salt"],
           type:"Salty",
-          url: "/assets/peaOmelette.jpg"
+          url: require('@/assets/images/peaOmelette.jpg')
         }
       ],
       copyRecipes: []
