@@ -3,13 +3,19 @@
     <div id="main-container" >
       <div>
         <AddRecipe v-on:add-recipe="addRecipe"/>
+         <p>type {{typeFinder}} </p>
       </div>
+
       <div class="finder-container d-flex justify-content-center" >
        <Finder v-on:query-change="querySearch" />
       </div>
+
       <div class="recipes-container mt-4">
         <h2  class="text-center mt-5">Results</h2>
-      <Recipes v-bind:recipesList="copyRecipes"/>
+
+        <p>type {{typeFinder}} </p>
+        
+        <Recipes v-bind:recipesList="copyRecipes"/>
       </div>
     </div>
   </div>
