@@ -3,17 +3,15 @@
     <div id="main-container" >
       <div>
         <AddRecipe v-on:add-recipe="addRecipe"/>
-         <p>type {{typeFinder}} </p>
+         <p >type {{typeFinder}} </p>
       </div>
 
       <div class="finder-container d-flex justify-content-center" >
-       <Finder v-on:query-change="querySearch" />
+       <Finder v-on:query-change="querySearch"/>
       </div>
 
       <div class="recipes-container mt-4">
         <h2  class="text-center mt-5">Results</h2>
-
-        <p>type {{typeFinder}} </p>
         
         <Recipes v-bind:recipesList="copyRecipes"/>
       </div>
@@ -36,10 +34,13 @@ export default {
   }, 
 
   methods:{
+  typeFinder(value){
+      this.recipeType = value;
+},
   addRecipe(recipe){
     this.recipes.push(recipe);
     this.copyRecipes = [...this.recipes]
-  },
+  }, 
   querySearch(query){
     if(query.trim() === ''){
       this.copyRecipes = [...this.recipes];
@@ -54,6 +55,7 @@ export default {
   },
   data () {
     return{
+
       recipes:[
         {
           id:0,
