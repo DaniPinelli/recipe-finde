@@ -54,10 +54,15 @@ export default {
         this.copyRecipes = [...temp];
       }
     },
-    computed: {
-      filterSalty() {
-        return this.recipes.filter((recipe) => recipe.type === "Salty");
-      },
+    SelectedSalty() {
+      this.copyRecipes = this.recipes.filter(
+        (recipe) => recipe.type === "Salty"
+      );
+    },
+    SelectedSweet() {
+      this.copyRecipes = this.recipes.filter(
+        (recipe) => recipe.type === "Sweet"
+      );
     },
   },
   data() {

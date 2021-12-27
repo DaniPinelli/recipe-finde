@@ -22,7 +22,7 @@
           v-on:input="filterSalty"
           id="inlineRadio1"
           value="Salty"
-          @click="$emit('SelectedSalty', salty)"
+          @click="$emit('Selected-salty', salty)"
         />
       </div>
       <div class="form-check form-check-inline mt-3">
@@ -34,7 +34,7 @@
           v-on:input="$emit('typeFinder', typeFinder)"
           id="inlineRadio2"
           value="Sweet"
-          @click="$emit('SelectedSweet', sweet)"
+          @click="$emit('Selected-sweet', sweet)"
         />
         <label class="form-check-label" for="inlineRadio2">Sweet</label>
       </div>
