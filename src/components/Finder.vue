@@ -15,7 +15,6 @@
       <div class="form-check form-check-inline mt-3">
         <label class="form-check-label" for="inlineRadio1">Salty</label>
         <input
-          v-model="typeFinder"
           class="form-check-input"
           type="radio"
           name="inlineRadioOptions"
@@ -27,11 +26,9 @@
       </div>
       <div class="form-check form-check-inline mt-3">
         <input
-          v-model="typeFinder"
           class="form-check-input"
           type="radio"
           name="inlineRadioOptions"
-          v-on:input="$emit('typeFinder', typeFinder)"
           id="inlineRadio2"
           value="Sweet"
           @click="$emit('Selected-sweet', sweet)"
@@ -45,14 +42,9 @@
 export default {
   name: "Finder",
   data() {
-    return (
-      {
-        query: "",
-      },
-      {
-        typeFinder: "",
-      }
-    );
+    return {
+      query: "",
+    };
   },
 };
 </script>

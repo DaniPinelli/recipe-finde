@@ -36,13 +36,20 @@ export default {
   },
 
   methods: {
-    typeFinder(value) {
-      this.recipeType = value;
-    },
     addRecipe(recipe) {
       this.recipes.push(recipe);
       this.copyRecipes = [...this.recipes];
     },
+    /* SelectedSalty() {
+      this.copyRecipes = this.recipes.filter(
+        (recipe) => recipe.type === "Salty"
+      );
+    },
+    SelectedSweet() {
+      this.copyRecipes = this.recipes.filter(
+        (recipe) => recipe.type === "Sweet"
+      );
+    },*/
     querySearch(query) {
       if (query.trim() === "") {
         this.copyRecipes = [...this.recipes];
@@ -53,16 +60,6 @@ export default {
 
         this.copyRecipes = [...temp];
       }
-    },
-    SelectedSalty() {
-      this.copyRecipes = this.recipes.filter(
-        (recipe) => recipe.type === "Salty"
-      );
-    },
-    SelectedSweet() {
-      this.copyRecipes = this.recipes.filter(
-        (recipe) => recipe.type === "Sweet"
-      );
     },
   },
   data() {
