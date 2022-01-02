@@ -40,19 +40,18 @@ export default {
       this.recipes.push(recipe);
       this.copyRecipes = [...this.recipes];
     },
-    /* SelectedSalty() {
-      this.copyRecipes = this.recipes.filter(
-        (recipe) => recipe.type === "Salty"
-      );
-    },
-    SelectedSweet() {
-      this.copyRecipes = this.recipes.filter(
-        (recipe) => recipe.type === "Sweet"
-      );
-    },*/
+
     querySearch(query) {
       if (query.trim() === "") {
         this.copyRecipes = [...this.recipes];
+      } else if (this.recipe.type === "Salty") {
+        [...this.recipes] = this.recipes.filter(
+          (recipe) => recipe.type === "Salty"
+        );
+      } else if (this.recipe.type === "Sweet") {
+        [...this.recipes] = this.recipes.filter(
+          (recipe) => recipe.type === "Sweet"
+        );
       } else {
         const temp = this.copyRecipes.filter((recipe) => {
           return recipe.title.toLowerCase().includes(query);

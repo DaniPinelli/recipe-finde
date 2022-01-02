@@ -18,10 +18,8 @@
           class="form-check-input"
           type="radio"
           name="inlineRadioOptions"
-          v-on:input="filterSalty"
           id="inlineRadio1"
           value="Salty"
-          @click="$emit('Selected-salty', salty)"
         />
       </div>
       <div class="form-check form-check-inline mt-3">
@@ -31,7 +29,6 @@
           name="inlineRadioOptions"
           id="inlineRadio2"
           value="Sweet"
-          @click="$emit('Selected-sweet', sweet)"
         />
         <label class="form-check-label" for="inlineRadio2">Sweet</label>
       </div>
